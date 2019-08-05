@@ -1,0 +1,10 @@
+[user]
+	name = konnyaku256
+	email = 29503528+konnyaku256@users.noreply.github.com
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true

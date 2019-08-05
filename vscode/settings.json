@@ -1,0 +1,50 @@
+{
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.suggestSelection": "first",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "ctrlchar-remover.pattern": "[\\u0008]",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "ptex2pdf",
+            "tools": [
+                "ptex2pdf",
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "ptex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
+}
