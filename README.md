@@ -11,6 +11,6 @@ cd dotfiles
 ```
 
 ## Settings for iTerm2
-General -> Prederences
-1. Check 'Load prederences from a custom folder or URL'
+General -> Preferences
+1. Check 'Load preferences from a custom folder or URL'
 2. Set path '~/dotfiles'
