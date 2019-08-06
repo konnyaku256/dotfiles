@@ -8,3 +8,5 @@
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
+[commit]
+    template = ~/.commit_template
