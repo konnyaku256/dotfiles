@@ -35,3 +35,6 @@ cat $HOME/dotfiles/vscode/extensions.txt | while read line
 do
     code --install-extension $line
 done
+
+# zsh as default login shell
+chsh -s /usr/local/bin/zsh
