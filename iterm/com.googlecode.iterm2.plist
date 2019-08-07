@@ -363,7 +363,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -410,9 +410,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 167 224 275 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>357 108 650 477 0 0 1440 877 </string>
+	<string>76 153 650 477 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>76 153 650 477 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -646,7 +646,9 @@
 				<real>0.17254902422428131</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string></string>
+			<string>~/dotfiles/iterm/ganbaruzoi.png</string>
+			<key>Background Image Mode</key>
+			<integer>2</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -660,6 +662,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.12930694265463916</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -1411,8 +1415,8 @@
 				<key>Red Component</key>
 				<real>0.17254902422428131</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string></string>
+			<key>Background Image Mode</key>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1426,6 +1430,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.050000000000000003</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -2709,12 +2715,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{108, 759}</string>
+		<string>{103, 763}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>BED199F3-645D-4F33-A664-8D1446D71C63</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>3</integer>
+	<integer>8</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586883928.46759403</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3391,7 +3397,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/konnyaku/dotfiles</string>
+	<string>~/dotfiles/iterm</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
