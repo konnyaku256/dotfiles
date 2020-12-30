@@ -1,18 +1,14 @@
-# Install via Homebrew.
+# Homebrew
+## Homebrewのインストール
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+## brew bundle: Brewfileからパッケージを一括でインストールする
 brew bundle --file=Brewfile
 
-# Install prezto for zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
 
-# Link any dotfiles
+# dotfilesのシンボリックリンクを貼る（.zshrc, .vimrc, etc.）
 for f in .??*
 do
-    # The following is excluded.
+    # ただし、以下は除きます
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".config" ]] && continue
@@ -21,20 +17,21 @@ do
     echo "$f"
     ln -s $HOME/dotfiles/$f $HOME/$f
 done
-
 ln -s $HOME/dotfiles/.config/git/ignore $HOME/.config/git/ignore
 
 
-# Link the Visual Studio Code settings.json.
+# Visual Studio Code
+## settings.jsonのシンボリックリンクを貼る
 VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
 rm $VSCODE_SETTING_DIR/settings.json
 ln -s $HOME/dotfiles/vscode/settings.json $VSCODE_SETTING_DIR/settings.json
 
-# Install the Visual Studio Code Extentions.
+## extensions.txtから拡張機能を一括でインストールする
 cat $HOME/dotfiles/vscode/extensions.txt | while read line
 do
     code --install-extension $line
 done
 
-# zsh as default login shell
+
+# デフォルトのログインシェルをzshに変更する
 chsh -s /usr/local/bin/zsh
