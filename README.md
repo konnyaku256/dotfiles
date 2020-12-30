@@ -1,4 +1,4 @@
-# dotfiles
+# konnyaku256/dotfiles
 This is my dotfiles repository for macOS.
 You can quickly setup my development environment.
 
