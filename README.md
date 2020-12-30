@@ -11,7 +11,7 @@ $ ./setup.sh
 ```
 
 ## 設定ファイル更新時のチートシート
-- `~/.*` 系はこのリポジトリのルートを更新
+- `~/.*` のdotfiles系はこのリポジトリのルートを更新
 - `brew bundle dump` でBrewfileを更新
 - `./vscode/settings.json` を更新
 - `code --list-extensions > ./vscode/extentions.txt` でextentions.txtを更新
