@@ -17,6 +17,8 @@ do
     echo "$f"
     ln -s $HOME/dotfiles/$f $HOME/$f
 done
+
+# .gitignoreのグローバル設定
 ln -s $HOME/dotfiles/.config/git/ignore $HOME/.config/git/ignore
 
 
