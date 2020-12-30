@@ -1,50 +1,121 @@
 {
-    "editor.fontSize": 14,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.suggestSelection": "first",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "ctrlchar-remover.pattern": "[\\u0008]",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "ptex2pdf",
-            "tools": [
-                "ptex2pdf",
-            ]
-        }
-    ],
     "latex-workshop.latex.tools": [
         {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "%DOC%"
-            ]
-        },
-        {
-            "name": "ptex2pdf",
             "command": "ptex2pdf",
             "args": [
                 "-l",
                 "-ot",
                 "-kanji=utf8 -synctex=1",
-                "%DOC%"
-            ]
+                "%DOCFILE%.tex"
+            ],
+            "name": "Step 1: ptex2pdf"
         },
         {
-            "name": "bibtex",
-            "command": "bibtex",
+            "command": "pbibtex",
             "args": [
-                "%DOCFILE%"
+                "%DOCFILE%",
+                "-kanji=utf8"
+            ],
+            "name": "Step 2: pbibtex"
+        },
+        {
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOCFILE%.tex"
+            ],
+            "name": "Step 3: ptex2pdf"
+        },
+        {
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOCFILE%.tex"
+            ],
+            "name": "Step 4: ptex2pdf"
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "toolchain",
+            "tools": [
+                "Step 1: ptex2pdf",
+                "Step 2: pbibtex",
+                "Step 3: ptex2pdf",
+                "Step 4: ptex2pdf"
             ]
         }
     ],
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.fontSize": 14,
+    // For gopls
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    // Global settings for gopls
+    // https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+    "gopls": {
+        // === Officially supported Settings ===
+
+        // This controls the information that appears in the hover text.
+        "hoverKind": "SynopsisDocumentation",
+        // If true, then completion responses may contain placeholders for function parameters or struct fields.
+        "usePlaceholders": true,
+        // This controls where points documentation for given package in `textDocument/documentLink`.
+        "linkTarget": "pkg.go.dev",
+
+        // === Experimental Settings ===
+
+        // If true, it enables the use of the staticcheck.io analyzers.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+        // If false, indicates that the user does not want documentation with completion results.
+        "completionDocumentation": true,
+        // If true, the completion engine is allowed to make suggestions for packages that you do not currently import.
+        "completeUnimported": true,
+        // If true, this turns on the ability to return completions from deep inside relevant entities, rather than just the locally accessible ones.
+        "deepCompletion": true
+    },
+    "workbench.editor.enablePreview": false,
+    "markdown.preview.breaks": true,
+    "markdown-pdf.headerTemplate": "<span class='title' style='display: none;'></span>",
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "/Users/konnyaku256/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.minikube-path.mac": "/Users/konnyaku256/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    },
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "files.exclude": {
+        "**/*.csproj": true,
+        "**/*.meta": true,
+        "**/node_modules": true
+    },
+    "explorer.confirmDelete": false,
+    "kite.showWelcomeNotificationOnStartup": false,
+    "kite.showGoBetaNotification": false,
+    "python.languageServer": "Pylance",
+    "eslint.enable": false,
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7Z2NwMjtrdWJlcm5ldGVzXCIsXCJjdXN0b21MaWJyYXJpZXNcIjpbXCJMLnNjcmF0Y2hwYWRcIl0sXCJwbHVnaW5zXCI6W10sXCJyZWNlbnRDb2xvcnNcIjpbXCJub25lXCIsXCIwMDAwMDBcIl0sXCJmb3JtYXRXaWR0aFwiOjI0MCxcImNyZWF0ZVRhcmdldFwiOmZhbHNlLFwicGFnZUZvcm1hdFwiOntcInhcIjowLFwieVwiOjAsXCJ3aWR0aFwiOjg1MCxcImhlaWdodFwiOjExMDB9LFwic2VhcmNoXCI6dHJ1ZSxcInNob3dTdGFydFNjcmVlblwiOnRydWUsXCJncmlkQ29sb3JcIjpcIiNkMGQwZDBcIixcImRhcmtHcmlkQ29sb3JcIjpcIiM2ZTZlNmVcIixcImF1dG9zYXZlXCI6dHJ1ZSxcInJlc2l6ZUltYWdlc1wiOm51bGwsXCJvcGVuQ291bnRlclwiOjAsXCJ2ZXJzaW9uXCI6MTgsXCJ1bml0XCI6MSxcImlzUnVsZXJPblwiOmZhbHNlLFwidWlcIjpcIlwifSJ9",
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "workbench.colorTheme": "One Dark Pro"
 }
