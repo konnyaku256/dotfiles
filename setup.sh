@@ -15,23 +15,26 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
 
     echo "$f"
-    ln -s $HOME/dotfiles/$f $HOME/$f
+    ln -s ./$f $HOME/$f
 done
 
 # .gitignoreのグローバル設定
-ln -s $HOME/dotfiles/.config/git/ignore $HOME/.config/git/ignore
+rm $HOME/.config/git/ignore
+ln -s ./.config/git/ignore $HOME/.config/git/ignore
+
 # starshipの設定
-ln -s $HOME/dotfiles/.config/starship.toml $HOME/.config/starship.toml
+rm $HOME/.config/starship.toml
+ln -s ./.config/starship.toml $HOME/.config/starship.toml
 
 
 # Visual Studio Code
 ## settings.jsonのシンボリックリンクを貼る
-VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
+VSCODE_SETTING_DIR=$HOME/Library/Application\ Support/Code/User
 rm $VSCODE_SETTING_DIR/settings.json
-ln -s $HOME/dotfiles/vscode/settings.json $VSCODE_SETTING_DIR/settings.json
+ln -s ./vscode/settings.json $VSCODE_SETTING_DIR/settings.json
 
 ## extensions.txtから拡張機能を一括でインストールする
-cat $HOME/dotfiles/vscode/extensions.txt | while read line
+cat ./vscode/extensions.txt | while read line
 do
     code --install-extension $line
 done
