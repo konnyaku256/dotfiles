@@ -42,7 +42,7 @@ $ brew bundle
 https://github.com/Homebrew/homebrew-bundle
 
 ## Visual Studio Code
-メインで使用しているコーディングエディタです。
+メインで使用しているコーディングエディタです。
 
 ### settings.json
 エディタ全般の設定は `settings.json` で管理できます。
@@ -67,7 +67,7 @@ https://code.visualstudio.com/docs/editor/extension-gallery#_command-line-extens
 
 
 ## iTerm2
-メインで使用しているターミナルです。
+メインで使用しているターミナルです。
 最近、[One Dark](https://github.com/atom/one-dark-ui)というカラースキームを導入してみましたが、なかなかよかったです。
 
 https://github.com/one-dark/iterm-one-dark-theme
