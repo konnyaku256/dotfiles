@@ -3,6 +3,7 @@ This is my dotfiles repository for macOS.
 You can quickly setup my development environment.
 
 ## How to setup
+dotfilesのクローン先はホームディレクトリ下がおすすめです。
 ```sh
 $ cd ~
 $ git clone https://github.com/konnyaku256/dotfiles.git
@@ -45,7 +46,7 @@ https://github.com/Homebrew/homebrew-bundle
 
 ### settings.json
 エディタ全般の設定は `settings.json` で管理できます。
-`~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンク貼ってます。
+`$HOME/Library/Application\ Support/Code/User/settings.json` にシンボリックリンク貼ってます。
 
 ### Extensions
 次のコマンドでVisual Studio Codeで管理している全ての拡張機能をextentions.txtとして書き出すことができます。
@@ -56,7 +57,7 @@ $ code --list-extensions > ./vscode/extentions.txt
 
 また、extensions.txtから拡張機能を一括でインストールできます。
 ```sh
-$ cat $HOME/dotfiles/vscode/extensions.txt | while read line
+$ cat ./vscode/extensions.txt | while read line
 > do
 >     code --install-extension $line
 > done
