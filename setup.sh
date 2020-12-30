@@ -20,6 +20,8 @@ done
 
 # .gitignoreのグローバル設定
 ln -s $HOME/dotfiles/.config/git/ignore $HOME/.config/git/ignore
+# starshipの設定
+ln -s $HOME/dotfiles/.config/starship.toml $HOME/.config/starship.toml
 
 
 # Visual Studio Code
