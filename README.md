@@ -15,7 +15,7 @@ $ ./setup.sh
 - `~/.*` のdotfiles系はこのリポジトリのルートを更新
 - `brew bundle dump` でBrewfileを更新
 - `./vscode/settings.json` を更新
-- `code --list-extensions > ./vscode/extentions.txt` でextentions.txtを更新
+- `code --list-extensions > extentions.txt` でextentions.txtを更新
 
 ## dotfiles
 .zshrc, .vimrcなどのdotfilesはこのリポジトリのルートに配置しておきます。
@@ -52,7 +52,7 @@ https://github.com/Homebrew/homebrew-bundle
 次のコマンドでVisual Studio Codeで管理している全ての拡張機能をextentions.txtとして書き出すことができます。
 
 ```sh
-$ code --list-extensions > ./vscode/extentions.txt
+$ code --list-extensions > extentions.txt
 ```
 
 また、extensions.txtから拡張機能を一括でインストールできます。
