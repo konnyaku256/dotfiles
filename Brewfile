@@ -51,6 +51,8 @@ brew "nvm"
 brew "peco"
 brew "plantuml"
 brew "protobuf"
+brew "pyenv"
+brew "pyenv-virtualenv"
 brew "pyqt", link: false
 brew "qscintilla2"
 brew "reattach-to-user-namespace"
