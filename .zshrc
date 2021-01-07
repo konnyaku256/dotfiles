@@ -40,6 +40,9 @@ source $(brew --prefix nvm)/nvm.sh
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Rust 🦀
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Flutter
 export PATH=$HOME/dev/flutter/bin:$PATH
 

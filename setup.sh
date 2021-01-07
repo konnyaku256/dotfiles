@@ -26,6 +26,8 @@ ln -s ./.config/git/ignore $HOME/.config/git/ignore
 rm $HOME/.config/starship.toml
 ln -s ./.config/starship.toml $HOME/.config/starship.toml
 
+# Rust
+rustup-init
 
 # Visual Studio Code
 ## settings.jsonのシンボリックリンクを貼る

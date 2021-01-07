@@ -58,6 +58,7 @@ brew "pyqt", link: false
 brew "qscintilla2"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
+brew "rustup"
 brew "slackcat"
 brew "starship"
 brew "terraform", link: false

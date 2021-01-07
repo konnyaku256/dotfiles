@@ -37,6 +37,7 @@ PKief.material-icon-theme
 redhat.java
 redhat.vscode-yaml
 ritwickdey.LiveServer
+rust-lang.rust
 satokaz.vscode-bs-ctrlchar-remover
 shd101wyy.markdown-preview-enhanced
 skyran.js-jsx-snippets
