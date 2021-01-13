@@ -19,7 +19,7 @@ $ ./setup.sh
 
 ## dotfiles
 .zshrc, .vimrcなどのdotfilesはこのリポジトリのルートに配置しておきます。
-あとは、setup.shがlnコマンドでいい感じにシンボリックリンクを貼ってくれます。
+あとは、setup.shが `ln -s` コマンドでいい感じにシンボリックリンクを貼ってくれます。
 
 ## Homebrew
 macOSで使っているほとんどのアプリはHomebrewでパッケージ管理しています。
