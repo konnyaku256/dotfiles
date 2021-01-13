@@ -22,6 +22,7 @@ alias ghb='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 ## それ以外
 alias gc="git commit"
+alias cpr='(){ git fetch $1 pull/$2/head:pr-$2; git checkout pr-$2; }'
 alias k="kubectl"
 source <(kubectl completion zsh)
 
