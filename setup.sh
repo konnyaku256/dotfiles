@@ -15,16 +15,16 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
 
     echo "$f"
-    ln -s ./$f $HOME/$f
+    ln -s $PWD/$f $HOME/$f
 done
 
 # .gitignoreのグローバル設定
 rm $HOME/.config/git/ignore
-ln -s ./.config/git/ignore $HOME/.config/git/ignore
+ln -s $PWD/.config/git/ignore $HOME/.config/git/ignore
 
 # starshipの設定
 rm $HOME/.config/starship.toml
-ln -s ./.config/starship.toml $HOME/.config/starship.toml
+ln -s $PWD/.config/starship.toml $HOME/.config/starship.toml
 
 # Rust
 rustup-init
@@ -33,7 +33,7 @@ rustup-init
 ## settings.jsonのシンボリックリンクを貼る
 VSCODE_SETTING_DIR=$HOME/Library/Application\ Support/Code/User
 rm $VSCODE_SETTING_DIR/settings.json
-ln -s ./vscode/settings.json $VSCODE_SETTING_DIR/settings.json
+ln -s $PWD/vscode/settings.json $VSCODE_SETTING_DIR/settings.json
 
 ## extensions.txtから拡張機能を一括でインストールする
 cat ./vscode/extensions.txt | while read line
