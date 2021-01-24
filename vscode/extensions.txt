@@ -6,6 +6,7 @@ dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 formulahendry.code-runner
 Gimly81.matlab
+github.vscode-pull-request-github
 golang.go
 GrapeCity.gc-excelviewer
 GraphQL.vscode-graphql
