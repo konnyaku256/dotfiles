@@ -62,6 +62,8 @@
     // For gopls
     "go.useLanguageServer": true,
     "[go]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
@@ -117,5 +119,8 @@
         "configurations": [],
         "compounds": []
     },
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontLigatures": null,
+    "go.formatTool": "gofmt",
+    "editor.renderWhitespace": "boundary"
 }
