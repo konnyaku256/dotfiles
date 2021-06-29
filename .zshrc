@@ -10,7 +10,7 @@ export PAGER='less'
 # Alias
 ## Unixコマンド
 alias ...="cd ../.."
-alias ls="exa"
+alias ls="exa -lha --git"
 alias find="fd"
 alias grep="rg"
 alias hexdump="hexyl"
@@ -19,6 +19,9 @@ alias hexdump="hexyl"
 # ref:https://qiita.com/itkrt2y/items/0671d1f48e66f21241e2
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias ghb='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+# ref:https://qiita.com/UNILORN/items/fafa9f00fde8a28caa4f
+alias glb='cd $(ghq root)/$(ghq list | peco) && gitbr'
+alias gitbr="git remote get-url origin | sed -e 's/ssh:\/\/git@/https:\/\//g' -e 's/:[0-9]\{2,\}//g' -e 's/.git$//g' | xargs -I \{\} open {}"
 
 ## それ以外
 alias gc="git commit"
@@ -60,3 +63,7 @@ export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # GNU sed
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+
+# Google Cloud
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
